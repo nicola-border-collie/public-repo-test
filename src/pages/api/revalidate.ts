@@ -7,7 +7,7 @@ export const POST: APIRoute = async ({ request }) => {
     const { tags } = await request.json();
 
     if (!Array.isArray(tags)) {
-        return new Response(`Bad Request: expected tags attribute with array of strings in the body, got ${typeof tags}`, { status: 400 });
+        return new Response(`Bad Request: expected tags attribute!!! with array of strings in the body, got ${typeof tags}`, { status: 400 });
     }
 
     await purgeCache({ tags });
